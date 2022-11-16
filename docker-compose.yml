@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    micliente:
+        image: "micliente:3.1"
+        build: .
+        restart: always
+        environment:
+            - REACT_APP_API_BACKEND=http://192.168.27.141:9091/micliente/api/v3
+            - REACT_APP_GOOGLE_KEY=AIzaSyBqcIlr5p3rDL3oyzR64p2_MMHOrpSbZao
+            - REACT_APP_PATH=micliente
+            - REACT_APP_KEY=yzR64p2_MMHOrpSbZaoAIzaSyBqcIlr5p3rDL3o
+        ports:
+            - "9092:80"

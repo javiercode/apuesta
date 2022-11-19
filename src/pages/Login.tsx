@@ -11,8 +11,7 @@ import { green } from '@mui/material/colors';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Button from '@mui/material/Button';
 import Copyright from '../components/Copyright';
 import { loginService } from '../service/index.service';
@@ -85,18 +84,10 @@ function Login() {
               alignItems: 'center',
             }}
           >
-            <Box
-              component="img"
-              sx={{
-                height: 100,
-                width: 350,
-                maxHeight: { xs: 120, md: 90 },
-                maxWidth: { xs: 350, md: 250 },
-              }}
-              alt="Banco Ganadero"
-              src={require('../assets/image/logoBGA.png')}
-            />
             <Card><CardContent>
+              <Avatar style={{margin: theme.spacing(1),backgroundColor: theme.palette.secondary.main}}>
+                <LockOutlinedIcon />
+              </Avatar>
               <Typography component="h1" variant="h5" sx={{ display: 'inline-flex', alignContent: 'right' }}>
                 Iniciar Sesión
               </Typography>
@@ -128,11 +119,11 @@ function Login() {
                   autoComplete="current-password"
                 />
 
-                {mensajeAlerta!=="" && 
-                  <Alert severity='warning' onClose={() => {setMensajeAlerta("")}}>{mensajeAlerta}</Alert>
+                {mensajeAlerta !== "" &&
+                  <Alert severity='warning' onClose={() => { setMensajeAlerta("") }}>{mensajeAlerta}</Alert>
                 }
-                
-                <Button type="submit" fullWidth variant="contained" sx={buttonSx} disabled={loadingResponse} style={{background:Color.secondary}}>
+
+                <Button type="submit" fullWidth variant="contained" sx={buttonSx} disabled={loadingResponse} style={{ background: Color.secondary }}>
                   {loadingResponse && (
                     <CircularProgress
                       size={24}

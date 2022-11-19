@@ -88,10 +88,6 @@ pipeline {
                                         value: 'https://apis.dev.bg.com.bo/micliente/api/v3'
                                     ),
                                     variablesReplaceItemConfig(
-                                        name: 'REACT_APP_GOOGLE_KEY',
-                                        value: 'AIzaSyBqcIlr5p3rDL3oyzR64p2_MMHOrpSbZao'
-                                    ),
-                                    variablesReplaceItemConfig(
                                         name: 'REACT_APP_PATH',
                                         value: 'micliente'
                                     ),

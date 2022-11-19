@@ -5,6 +5,5 @@ metadata:
   namespace: {{Namespace}}
 data:
   REACT_APP_API_BACKEND: '{{REACT_APP_API_BACKEND}}'
-  REACT_APP_GOOGLE_KEY: '{{REACT_APP_GOOGLE_KEY}}'
   REACT_APP_PATH: '{{REACT_APP_PATH}}'
   REACT_APP_KEY: '{{REACT_APP_KEY}}'

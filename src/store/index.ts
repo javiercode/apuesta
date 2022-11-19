@@ -10,11 +10,6 @@ import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import { encryptTransform } from 'redux-persist-transform-encrypt';
 
-console.log("REACT_APP_API_BACKEND",process.env.REACT_APP_API_BACKEND)
-console.log("REACT_APP_GOOGLE_KEY",process.env.REACT_APP_GOOGLE_KEY)
-console.log("REACT_APP_PATH",process.env.REACT_APP_PATH)
-console.log("REACT_APP_KEY",process.env.REACT_APP_KEY)
-
 const persistConfig = {
   key: 'root',
   storage,

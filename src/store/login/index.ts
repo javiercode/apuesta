@@ -1,8 +1,6 @@
 // import { useDispatch, useSelector, useStore } from 'react-redux';
 import { store } from '../index';
-import { signOutAction, signInAction } from './action';
 import { RolesType } from '../../enums/RouterPathEnum';
-import { ubicacionXDepartamento } from '../../config/General';
 import { signInReducer, signOutReducer } from './reducer'
 import { IAuthReducer } from '../../interfaces/store';
 
@@ -50,10 +48,5 @@ const esOficial = () => {
     return rolFind.length==0;
 }
 
-const getUbicacionXDepartamento = () => {
-    const auth = getAuth();
-    return ubicacionXDepartamento(auth.departamento || 0)
-    // return {lat:0,lng:0}
-}
 
-export { signOut, signIn, getAuth,updateToken,esOficial, getUbicacionXDepartamento }
+export { signOut, signIn, getAuth,updateToken,esOficial }

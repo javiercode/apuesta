@@ -85,13 +85,12 @@ function Login() {
             }}
           >
             <Card><CardContent>
-              <Avatar style={{margin: theme.spacing(1),backgroundColor: theme.palette.secondary.main}}>
-                <LockOutlinedIcon />
+              <Avatar style={{margin: theme.spacing(2),backgroundColor: Color.secondary,display: 'inline-flex'}}>
+                <LockOutlinedIcon style={{color:'white'}} />
               </Avatar>
               <Typography component="h1" variant="h5" sx={{ display: 'inline-flex', alignContent: 'right' }}>
                 Iniciar Sesión
               </Typography>
-
               <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                 <TextField
                   margin="normal"
@@ -104,7 +103,7 @@ function Login() {
                   autoFocus
                   value={user}
                   onChange={(event) => { setUser(event.target.value) }}
-                  inputProps={{ style: { textTransform: "uppercase" } }}
+                  inputProps={{ style: { textTransform: "lowercase" } }}
                 />
                 <TextField
                   margin="normal"

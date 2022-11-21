@@ -2,18 +2,15 @@
 import { store } from '../index';
 import { RolesType } from '../../enums/RouterPathEnum';
 import { signInReducer, signOutReducer } from './reducer'
-import { IAuthReducer } from '../../interfaces/store';
+import { IAuthReducer, SessionDto } from '../../interfaces/store';
 
-const signIn = (name: string, username: string, token: string, rol: string[], expire:number, sucursales:number[], departamento:number) => {
+const signIn = (name: string, username: string, token: string, rol: SessionDto[]) => {
     let userLogin:IAuthReducer = {
         isLogin:true,
         token:token,
         username:username,
         name:name,
         rol:rol,
-        expire:expire,
-        sucursales: sucursales,
-        departamento: departamento,
     }
     store.dispatch(signInReducer(userLogin));
 }
@@ -34,8 +31,7 @@ const getAuth = () => {
 const updateToken = (token:string) => {
     const authSession = getAuth();
     if (authSession.isLogin) {
-        signIn((authSession.name || ''),(authSession.username || ''),(token||''), (authSession.rol || []),
-        (authSession.expire || 0),(authSession.sucursales || []), (authSession.departamento || 0));
+        signIn((authSession.name || ''),(authSession.username || ''),(token||''), (authSession.rol || []));
     } 
     return store.getState().AuthReducer;
 }

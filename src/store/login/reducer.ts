@@ -5,7 +5,6 @@ import { createSlice } from '@reduxjs/toolkit'
 let initialState:IAuthReducer = {
     isLogin: false,
     rol:[],
-    sucursales:[]
 };
 
 
@@ -18,9 +17,6 @@ function AuthReducer( state = initialState,action:AuthAction ) {
           username:action.payload.username,
           name:action.payload.name,
           rol:action.payload.rol,
-          expire:action.payload.expire,
-          sucursales: action.payload.sucursales,
-          departamento: action.payload.departamento,
       }
       state = userLogin;
       return userLogin;
@@ -43,9 +39,6 @@ export const loginSlice = createSlice({
           username:action.payload.username,
           name:action.payload.name,
           rol:action.payload.rol,
-          expire:action.payload.expire,
-          sucursales: action.payload.sucursales,
-          departamento: action.payload.departamento,
       }
     state = userLogin;
     return state;

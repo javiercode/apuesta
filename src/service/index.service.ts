@@ -25,7 +25,7 @@ async function deleteService(url: string, data: any): Promise<MessageResponse> {
   return methodService('delete', url, data);
 };
 async function loginService(username: string, password: string): Promise<MessageResponse> {
-  const credenciales = { username: username.toUpperCase(), password: password };
+  const credenciales = { username: username.toLowerCase(), password: password };
   return methodService('post', "/login", credenciales);
 };
 
@@ -42,7 +42,7 @@ async function methodService(type: string, url: string, dataPost: any): Promise<
     }
     response = dataAxios ? dataAxios : response;
     if (response.success && isLogin(url)) {
-      signIn(dataAxios.data.NOMBRE, dataPost.username.toUpperCase(), headers.authorization, dataAxios.data.ROL, 10000, dataAxios.data.SUCURSALES, dataAxios.data.DEPARTAMENTO);
+      signIn(dataAxios.data.NOMBRE, dataPost.username.toUpperCase(), headers.authorization, dataAxios.data);
     }
   } catch (error) {
     response.code = 505;

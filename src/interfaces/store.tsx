@@ -1,15 +1,22 @@
-
 export interface IAuthReducer {
   isLogin: boolean;
   token?: string;
   username?: string;
-  rol?: string[]; // 'Oficial / Ejecutivo','Jefe / Encargado','Gerente','Administrador'
-  expire?: number;
   name?: string;
-  sucursales?: number[];
-  departamento?: number;
+  rol?: SessionDto[];
 }
 
+export interface SessionDto {
+  id:number,
+  codigo:string,
+  username:string,
+  rol:string,
+  correo:string,
+  grupo:string,
+  tipo:string,
+  privacidad:string,
+  codPartido:string
+};
 
 export interface AuthAction {
   type: string

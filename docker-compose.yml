@@ -5,8 +5,8 @@ services:
         build: .
         restart: always
         environment:
-            - REACT_APP_API_BACKEND=http://192.168.27.141:9091/micliente/api/v3
-            - REACT_APP_PATH=micliente
+            - REACT_APP_API_BACKEND=http://localhost:4000/apuesta/api/v1
+            - REACT_APP_PATH=apuesta
             - REACT_APP_KEY=yzR64p2_MMHOrpSbZaoAIzaSyBqcIlr5p3rDL3o
         ports:
             - "9092:80"

@@ -7,6 +7,7 @@ import Home from './home';
 import GeoEjecutivo from './GeoEjecutivo';
 import SegEjecutivo from './SegEjecutivo';
 import Usuario from './usuario';
+import Apuesta from './apuesta';
 import EvolucionGestion from './EvolucionGestion';
 import TareaCliente from './TareaCliente';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -25,7 +26,7 @@ function App() {
           <Route element={<Layout />} >
             <Route path={RouterPathEnum.HOME} element={<Home />} />
             <Route path={RouterPathEnum.ABOUT} element={<About />} />            
-            <Route path={RouterPathEnum.USUARIOS} element={<Usuario />} />
+            <Route path={RouterPathEnum.APUESTA+"/:idGrupo"} element={<Apuesta />} />
             <Route path={RouterPathEnum.GEO_EJECUTIVO} element={<GeoEjecutivo />} />
             <Route path={RouterPathEnum.SEG_EJECUTIVO} element={<SegEjecutivo />} />
             <Route path={RouterPathEnum.EVOLUCION_GESTIONES} element={<EvolucionGestion />} />

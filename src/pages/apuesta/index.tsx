@@ -9,14 +9,16 @@ import FormCreate from "./FormCreate"
 import Filter from "./Filter"
 import { IGrupo } from '../../interfaces/grupo';
 import { getFecha, getStrFecha } from '../../config/General';
-import { useNavigate } from 'react-router-dom';
-import { RouterPathEnum } from '../../enums/RouterPathEnum';
+import { useParams } from 'react-router-dom';
 
 function Home() {
+  let { idGrupo } = useParams();
   const [dataList, setDataList] = React.useState<IGrupo[]>([]);
-  let navigate = useNavigate();
+
 
   React.useEffect(() => {
+    
+    console.log("grupo",idGrupo)
     getList()
   }, []);
 
@@ -38,7 +40,7 @@ function Home() {
       
       <Grid container component="main" justifyContent={'space-between'} >
         <Typography variant="h4" component="h4">
-          MIS GRUPOS
+          APUESTAS
         </Typography>
         <FormCreate />
       </Grid>
@@ -74,7 +76,7 @@ function Home() {
                   </Typography>
                 </CardContent>
                 <CardActions key={"card-content-action" + i}>
-                  <Button size="small" key={"card-content-button" + i} onClick={()=>navigate(RouterPathEnum.APUESTA+"/"+grupo.id)}>Ingresar</Button>
+                  <Button size="small" key={"card-content-button" + i}>Ingresar</Button>
                 </CardActions>
               </Card>
             </Grid>

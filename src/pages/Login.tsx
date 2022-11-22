@@ -22,6 +22,7 @@ import backgroundDefault from '../assets/image/backgroundDefault.jpg'
 import { MessageResponse } from '../interfaces/store';
 import { AlertTitle, CircularProgress } from '@mui/material';
 import Color from '../utils/styles/Color';
+import { RouterPathEnum } from '../enums/RouterPathEnum';
 
 
 const theme = createTheme();
@@ -38,7 +39,7 @@ function Login() {
     setLoadingResponse(true)
     loginService(user, password).then((response: MessageResponse) => {
       if (response.success) {
-        navigate('/home');
+        navigate(RouterPathEnum.HOME);
       } else {
         setMensajeAlerta(response.message)
       }

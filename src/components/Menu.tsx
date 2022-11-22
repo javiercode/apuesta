@@ -36,11 +36,11 @@ const aMenu = [
         'url': RouterPathEnum.USUARIOS,
       },
       {
-        'title': 'Geo Ejecutivo',
+        'title': 'Apuesta',
         'code': 2,
         'icon': <MapIcon style={{color:Color.secondary}} />,
         'parent': 0,
-        'url': RouterPathEnum.GEO_EJECUTIVO
+        'url': RouterPathEnum.APUESTA
       },
       {
         'title': 'Segumiento',
@@ -56,11 +56,11 @@ const aMenu = [
     visible: true,
     children: [
       {
-        'title': 'Clientes',
+        'title': 'Apuesta',
         'code': 5,
         'icon': <ClientIcon style={{color:Color.secondary}} />,
         'parent': 4,
-        'url': RouterPathEnum.CLIENTES
+        'url': RouterPathEnum.APUESTA+"/0"
       },
       {
         'title': 'Geo Clientes',

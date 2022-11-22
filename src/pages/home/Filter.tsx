@@ -22,23 +22,14 @@ interface IFormCreateProps {
 
 // const Filter: React.FC<IFormCreateProps> = ({ getList }: IFormCreateProps) => {
 const Filter: React.FC<IFormCreateProps> = () => {
-    const [fechaInicio, setFechaInicio] = React.useState<Date | null>(new Date());
-    const [fechaFin, setFechaFin] = React.useState<Date | null>(new Date());
-    const [nro, setNro] = React.useState<number>(0);
-    const [estado, setEstado] = React.useState<string>("");
-    const [responsable, setResponsable] = React.useState<string>("");
-
+    const [nombre, setNombre] = React.useState<string>("");
 
     useEffect(() => {
     }, []);
 
     const handleFind = () => {
         const paramsFilter={
-            "nro":nro,
-            "estado":estado =="TODOS"?"":estado,
-            "responsable":esOficial()? getAuth().username: responsable,
-            "fechaInicio": getStrFecha({date:new Date(fechaInicio || "") }),
-            "fechaFin": getStrFecha({date:new Date(fechaFin || "") }),
+            "nombre":nombre,
         }
         // getList(paramsFilter)
     };
@@ -57,67 +48,10 @@ const Filter: React.FC<IFormCreateProps> = () => {
             >
                 <FormControl fullWidth sx={{ m: 1 }} key={'cliente-filter-nro'}>
                     <TextField
-                        label="Nro Referencia"
-                        onChange={(e)=>setNro(Number(e.target.value.toString()) ||0)}
+                        label="Nombre"
+                        onChange={(e)=>setNombre(e.target.value.toString())}
                         key={'cliente-formcreate-dialog-formcontrol-nombre1'}
                     />
-                </FormControl>
-                <FormControl fullWidth sx={{ m: 1, width: '150ch'}} key={'tarea-filter-tipo'}>
-                            <InputLabel id="tarea-formcreate-select-tipo">Estado</InputLabel>
-                            <Select
-                                labelId="tarea-formcreate-select-tipo"
-                                label="Estado"
-                                onChange={(e) => setEstado(e.target.value)}
-                                key={'tarea-filter-estado'}
-                                defaultValue="TODOS"
-                            >
-                                <MenuItem value={"TODOS"} key={'tarea-filter-estado-default'}>
-                                    {"TODOS"} </MenuItem>
-                                {Object.keys(EstadoTareaEnum).map((key: string, index:number) => {
-                                    return (
-                                        <MenuItem value={key} key={'tarea-filter-select-estado-'+key}>
-                                            { Object.values(EstadoTareaEnum)[index]}
-                                        </MenuItem>
-                                    );
-                                })}
-                            </Select>
-                        </FormControl>
-                <FormControl fullWidth sx={{ m: 1 }} key={'cliente-filter-responsable'}>
-                    <TextField
-                        disabled={esOficial()}
-                        defaultValue={esOficial()? getAuth().username : ""}
-                        label="responsable"
-                        onChange={(e)=>setResponsable(e.target.value.toString() || "")}
-                        key={'cliente-formcreate-dialog-formcontrol-nombre2'}
-                    />
-                </FormControl>
-                <FormControl fullWidth sx={{ m: 1, width: '150ch' }} key={'tarea-filter-fechaInicio'} >
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <MobileDateTimePicker
-                            label="Inicio"
-                            value={fechaInicio}
-                            onChange={(e) => { setFechaInicio(e) }}
-                            renderInput={(params: any) => <TextField {...params} />}
-                            inputFormat="dd/MM/yyyy HH:MM"
-                            InputProps={{
-                                startAdornment: <CalendarTodayRoundedIcon />,
-                            }}
-                        />
-                    </LocalizationProvider>
-                </FormControl>
-                <FormControl fullWidth sx={{ m: 1, width: '150ch' }} key={'tarea-filter-fechaFin'} >
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <MobileDateTimePicker
-                            label="Fin"
-                            value={fechaFin}
-                            onChange={(e) => { setFechaFin(e) }}
-                            renderInput={(params: any) => <TextField {...params} />}
-                            inputFormat="dd/MM/yyyy HH:MM"
-                            InputProps={{
-                                startAdornment: <CalendarTodayRoundedIcon />,
-                            }}
-                        />
-                    </LocalizationProvider>
                 </FormControl>
                 <Button fullWidth sx={{ m: 1, width: '100ch' }} 
                     variant="outlined"

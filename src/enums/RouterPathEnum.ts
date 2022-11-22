@@ -2,6 +2,7 @@ enum RouterPathEnum  {
     HOME = '/home',
     ABOUT = '/about',
     LOGIN = '/',
+    APUESTA = '/apuesta',
     USUARIOS = '/usuarios',
     GEO_EJECUTIVO = '/geo-ejecutivo',
     SEG_EJECUTIVO = '/seguimiento',

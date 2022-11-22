@@ -3,7 +3,7 @@ import '../assets/styles/App.css';
 import Layout from './Layout';
 import Login from './Login';
 import About from './About';
-import Home from './Home';
+import Home from './home';
 import GeoEjecutivo from './GeoEjecutivo';
 import SegEjecutivo from './SegEjecutivo';
 import Usuario from './usuario';

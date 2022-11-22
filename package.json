@@ -2,6 +2,7 @@
   "name": "apuesta",
   "version": "0.2.0",
   "private": true,
+  "homepage": "/apuesta",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",

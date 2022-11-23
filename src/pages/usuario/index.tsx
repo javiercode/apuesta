@@ -26,7 +26,6 @@ import {
   typeRolData,
   typeSucursalData,
 } from "../../interfaces/usuario";
-import { esOficial } from "../../store/login";
 import Color from "../../utils/styles/Color";
 import { headerTable } from "../../utils/styles/General";
 
@@ -82,13 +81,7 @@ export default function Usuario() {
 
   let navigate = useNavigate();
   React.useEffect(() => {
-    if(esOficial()){
-      navigate('/home');
-    }else{
-      getList();
-      getListSucursal();
-      getListRol();
-    }
+    
   }, []);
 
   const getList = ({ pagina = 0, limite = 10 }: { pagina?: number; limite?: number } = {}) => {

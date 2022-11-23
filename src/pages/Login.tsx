@@ -23,6 +23,7 @@ import { MessageResponse } from '../interfaces/store';
 import { AlertTitle, CircularProgress } from '@mui/material';
 import Color from '../utils/styles/Color';
 import { RouterPathEnum } from '../enums/RouterPathEnum';
+import { getAuth } from '../store/login';
 
 
 const theme = createTheme();
@@ -33,6 +34,13 @@ function Login() {
   const [mensajeAlerta, setMensajeAlerta] = useState<string>("");
   const [loadingResponse, setLoadingResponse] = useState<boolean>(false);
   let navigate = useNavigate();
+
+  React.useEffect(() => {
+    console.log("getAuth",getAuth())
+    if(getAuth().isLogin){
+      navigate(RouterPathEnum.HOME);
+    }
+  }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

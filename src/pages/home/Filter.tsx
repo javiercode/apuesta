@@ -8,7 +8,7 @@ import CalendarTodayRoundedIcon from '@mui/icons-material/CalendarTodayRounded';
 import Button from '@mui/material/Button';
 import IconSearch from "@mui/icons-material/Search";
 import { btnDefault } from '../../utils/styles/General';
-import { esOficial, getAuth } from '../../store/login';
+import { getAuth } from '../../store/login';
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";

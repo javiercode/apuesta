@@ -19,7 +19,7 @@ const signOut = () => {
     store.dispatch(signOutReducer());
 }
 
-const getAuth = () => {
+const getAuth = ():IAuthReducer => {
     // let authReducer = JSON.parse(sessionStorage.getItem('auth') || '{}');
     // if (  Object.keys(authReducer).length>0 && store.getState().AuthReducer.isLogin !== authReducer.payload.isLogin) {
     //     signIn(authReducer.payload.name, authReducer.payload.username, 
@@ -36,13 +36,6 @@ const updateToken = (token:string) => {
     return store.getState().AuthReducer;
 }
 
-const esOficial = () => {
-    const auth = getAuth();
-    let aRol = [];
-    aRol = [...auth.rol];
-    const rolFind = aRol.filter(element => (element ===RolesType.ADMIN || element ===RolesType.GERENTE || element ===RolesType.JEFE ));
-    return rolFind.length==0;
-}
 
 
-export { signOut, signIn, getAuth,updateToken,esOficial }
+export { signOut, signIn, getAuth,updateToken }

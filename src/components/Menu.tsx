@@ -19,7 +19,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 
 import { NavLink } from 'react-router-dom';
 import { RouterPathEnum, aMenuRol } from '../enums/RouterPathEnum';
-import { getAuth, esOficial } from '../store/login';
+import { getAuth } from '../store/login';
 import { Typography } from '@mui/material';
 import Color from '../utils/styles/Color';
 const aMenu = [
@@ -111,7 +111,7 @@ function controlRoles() {
   aMenu.forEach(function (menu) {
     const pos = aMenuRol.map(function (e) { return e.code; }).indexOf(menu.code);
     menu.visible = aMenuRol[pos].visible;
-    if(menu.code==='adm_usuario' &&  esOficial()){
+    if(menu.code==='adm_usuario'){
       menu.visible= false;
     }
   })
